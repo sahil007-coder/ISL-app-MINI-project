@@ -1,7 +1,7 @@
 import torch
 import json
 import numpy as np
-from train_mediapipe1 import LandmarkDataset, LandmarkNN
+from train.train_mediapipe1 import LandmarkDataset, LandmarkNN
 import os
 
 try:
@@ -17,9 +17,9 @@ try:
 except ImportError:
     PLOT_AVAILABLE = False
 
-CSV_PATH = "landmarks_dataset11.csv"
-MAPPING_PATH = "class_mapping_mediapipe11.json"
-MODEL_SAVE_PATH = "best_model_mediapipe11.pth"
+CSV_PATH = "../landmarks_dataset11.csv"
+MAPPING_PATH = "../class_mapping_mediapipe11.json"
+MODEL_SAVE_PATH = "../best_model_mediapipe11.pth"
 
 def evaluate_performance():
     if not os.path.exists(CSV_PATH) or not os.path.exists(MAPPING_PATH) or not os.path.exists(MODEL_SAVE_PATH):

@@ -7,9 +7,9 @@ import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
 import numpy as np
 
-CSV_PATH = "landmarks_dataset11.csv"
-MAPPING_PATH = "class_mapping_mediapipe11.json"
-MODEL_SAVE_PATH = "best_model_mediapipe11.pth"
+CSV_PATH = "../landmarks_dataset11.csv"
+MAPPING_PATH = "../class_mapping_mediapipe11.json"
+MODEL_SAVE_PATH = "../best_model_mediapipe11.pth"
 BATCH_SIZE = 32
 EPOCHS = 100
 

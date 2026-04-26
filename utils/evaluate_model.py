@@ -3,12 +3,11 @@
 
 import torch
 import json
-from train_mediapipe1 import LandmarkDataset, LandmarkNN
-import os
+from train.train_mediapipe1 import LandmarkDataset, LandmarkNN
 
-CSV_PATH = "landmarks_dataset11.csv"
-MAPPING_PATH = "class_mapping_mediapipe11.json"
-MODEL_SAVE_PATH = "best_model_mediapipe11.pth"
+CSV_PATH = "../landmarks_dataset11.csv"
+MAPPING_PATH = "../class_mapping_mediapipe11.json"
+MODEL_SAVE_PATH = "../best_model_mediapipe11.pth"
 
 with open(MAPPING_PATH, 'r') as f:
     class_mapping = json.load(f)

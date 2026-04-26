@@ -1,5 +1,5 @@
 from flask import Flask, render_template, Response, jsonify, request
-from engine import ISLEngine
+from main.engine import ISLEngine
 import atexit
 
 app = Flask(__name__)
