@@ -46,6 +46,19 @@ def stats():
     engine_inst = get_engine()
     return jsonify(engine_inst.get_stats())
 
+@app.route('/update_history', methods=['POST'])
+def update_history():
+    engine_inst = get_engine()
+    data = request.json
+    engine_inst.history = data.get('new_history', '')
+    return jsonify({"status": "success"})
+
+@app.route('/clear_history', methods=['POST'])
+def clear_history():
+    engine_inst = get_engine()
+    engine_inst.history = ""
+    return jsonify({"status": "success"})
+
 def cleanup():
     global engine
     if engine is not None:
@@ -54,5 +67,4 @@ def cleanup():
 atexit.register(cleanup)
 
 if __name__ == '__main__':
-    get_engine()
     app.run(host='0.0.0.0', port=5000, debug=False, threaded=True)
